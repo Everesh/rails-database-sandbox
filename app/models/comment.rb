@@ -1,6 +1,6 @@
-class Post < ApplicationRecord
+class Comment < ApplicationRecord
   validates :title, presence: true, length: { minimum: 3, maximum: 50 }
 
   belongs_to :user
-  has_many :comments, dependent: :destroy
+  belongs_to :post
 end
